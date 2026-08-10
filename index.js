@@ -1,0 +1,1 @@
+const express = require('express');\nconst path = require('path');\nconst app = express();\nconst port = process.env.PORT || 3000;\napp.use(express.static(path.join(__dirname, 'public')));\napp.get('/api/hello', (req, res) => res.json({ message: 'Hello (no compression)'}));\napp.listen(port, () => console.log('Server listening on', port));
